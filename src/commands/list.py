@@ -31,8 +31,9 @@ def list_albums(session):
     bucket = get_bucket_name()
     list_objects = session.list_objects(Bucket=bucket)
     albums = set()
-    for key in list_objects["Contents"]:
-        albums.add(Path(key["Key"]).parent)
+    if "Contents" in list_objects:
+        for key in list_objects["Contents"]:
+            albums.add(Path(key["Key"]).parent)
 
     if not len(albums):
         raise Exception(f"Is no albums in {bucket}")
