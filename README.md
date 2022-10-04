@@ -1,8 +1,14 @@
 # cloudphoto
+### Хасанов Анвар Рустамович, группа 11-905
 
-# Перед использованием 
+# Установка 
 ```
 pip install .
+```
+
+# Usage
+```
+cloudphoto [-h] {upload,download,list,delete,mksite,init} ...
 ```
 
 # Ссылка на задание
