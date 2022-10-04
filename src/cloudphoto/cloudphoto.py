@@ -29,38 +29,27 @@ subparsers.add_parser("mksite")
 subparsers.add_parser("init")
 
 
-def upload(session):
-    args = vars(parser.parse_args())
-    upload_img(session, **args)
+def upload(session, **kwargs):
+    upload_img(session, **kwargs)
 
 
-def download(session):
-    args = vars(parser.parse_args())
-    download_img(session, **args)
+def download(session, **kwargs):
+    download_img(session, **kwargs)
 
 
-def list_command(session):
-    args = vars(parser.parse_args())
-    album = args.get('album')
+def list_command(session, album):
     list_img(session, album) if album else list_albums(session)
 
 
-def delete(session):
-    args = vars(parser.parse_args())
-    album, photo = args.get('album'), args.get('photo')
-    if photo:
-        delete_img(session, album, photo)
-    else:
-        delete_album(session, album)
+def delete(session, album, photo):
+    delete_img(session, album, photo) if photo else delete_album(session, album)
 
 
 def mksite(session):
-    parser.parse_args()
     make_site(session)
 
 
 def init():
-    parser.parse_args()
     initialize()
 
 
@@ -85,7 +74,7 @@ def main():
 
     if function != init:
         session = init_s3_session()
-        function(session)
+        function(session, **vars(parser.parse_args()))
         session.close()
     else:
         function()

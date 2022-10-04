@@ -31,7 +31,7 @@ def get_albums_data(session, bucket: str):
 
 
 def get_template(name):
-    template_path = Path(ROOT_DIRECTORY) / "src" / "resources" / name
+    template_path = Path(ROOT_DIRECTORY) / "resources" / name
     with open(template_path, "r") as file:
         return file.read()
 

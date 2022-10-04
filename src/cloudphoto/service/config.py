@@ -2,7 +2,7 @@ import configparser
 import pathlib
 from os import path
 
-ROOT_DIRECTORY = path.dirname(pathlib.Path(__file__).parent.parent)
+ROOT_DIRECTORY = path.dirname(pathlib.Path(__file__).parent)
 CONFIG_PATH_DIR = pathlib.Path.home() / ".config" / "cloudphoto"
 CONFIG_FILENAME = "cloudphotorc"
 CONFIGFILE_PATH = str(CONFIG_PATH_DIR / CONFIG_FILENAME)
