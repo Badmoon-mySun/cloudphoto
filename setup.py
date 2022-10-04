@@ -29,7 +29,7 @@ setuptools.setup(
     ],
     entry_points={
         'console_scripts': [
-            'cloudphoto = src.cloudphoto:main',
+            'cloudphoto = cloudphoto.cloudphoto:main',
         ],
     },
     python_requires='>=3.5',

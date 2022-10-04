@@ -1,6 +1,5 @@
 from botocore.exceptions import ClientError
 
-
 DELIMITER = '/'
 
 

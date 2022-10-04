@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from service.config import get_bucket_name
-from service.utils import is_album_exist, DELIMITER
+from cloudphoto.service.config import get_bucket_name
+from cloudphoto.service.utils import is_album_exist, DELIMITER
 
 
 def download_img(session, album: str, path: str):

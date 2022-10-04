@@ -1,8 +1,8 @@
 import logging
 from pathlib import Path
 
-from service.config import get_bucket_name
-from service.utils import check_album
+from cloudphoto.service.config import get_bucket_name
+from cloudphoto.service.utils import check_album
 
 IMG_EXTENSIONS = [".jpg", ".jpeg", ".png", ".gif"]
 

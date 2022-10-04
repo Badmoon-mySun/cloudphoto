@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from service.config import get_bucket_name
-from service.utils import DELIMITER, is_album_exist
+from cloudphoto.service.config import get_bucket_name
+from cloudphoto.service.utils import DELIMITER, is_album_exist
 
 
 def list_img(session, album):
@@ -11,9 +11,9 @@ def list_img(session, album):
         raise Exception(f"Album '{album}' does not exist")
 
     list_objects = session.list_objects(
-            Bucket=bucket,
-            Prefix=album + DELIMITER,
-            Delimiter=DELIMITER
+        Bucket=bucket,
+        Prefix=album + DELIMITER,
+        Delimiter=DELIMITER
     )
     images = []
     for key in list_objects["Contents"]:

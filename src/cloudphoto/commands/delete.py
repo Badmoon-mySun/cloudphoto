@@ -1,6 +1,5 @@
-
-from service.config import get_bucket_name
-from service.utils import DELIMITER, is_image_exist, get_image_key, is_album_exist
+from cloudphoto.service.config import get_bucket_name
+from cloudphoto.service.utils import DELIMITER, is_image_exist, get_image_key, is_album_exist
 
 
 def delete_img(session, album: str, image: str):
@@ -20,9 +19,9 @@ def delete_img(session, album: str, image: str):
 
 def get_all_images_key(session, bucket: str, album: str):
     list_objects = session.list_objects(
-            Bucket=bucket,
-            Prefix=album + DELIMITER,
-            Delimiter=DELIMITER,
+        Bucket=bucket,
+        Prefix=album + DELIMITER,
+        Delimiter=DELIMITER,
     )["Contents"]
     return [{"Key": img_key.get('Key')} for img_key in list_objects]
 

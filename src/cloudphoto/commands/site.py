@@ -6,7 +6,7 @@ from pathlib import Path
 
 from jinja2 import Template
 
-from service.config import get_bucket_name, ROOT_DIRECTORY
+from cloudphoto.service.config import get_bucket_name, ROOT_DIRECTORY
 
 SITE_CONFIGURATION = {
     "ErrorDocument": {"Key": "error.html"},

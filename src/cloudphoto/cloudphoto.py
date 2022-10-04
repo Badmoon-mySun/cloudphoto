@@ -1,10 +1,10 @@
 import argparse
 import sys
 
-from commands import list_img, list_albums, delete_img, delete_album, make_site
-from commands import upload_img, download_img
-from service.aws_helper import init_s3_session
-from service.initializer import initialize
+from .commands import list_img, list_albums, delete_img, delete_album, make_site
+from .commands import upload_img, download_img
+from .service.aws_helper import init_s3_session
+from .service.initializer import initialize
 
 parser = argparse.ArgumentParser()
 subparsers = parser.add_subparsers(help="sub-command help")

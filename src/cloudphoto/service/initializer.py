@@ -3,7 +3,6 @@ from botocore.exceptions import ClientError
 from .aws_helper import create_s3_session
 from .config import create_config
 
-
 DEFAULT_ENDPOINT = "https://storage.yandexcloud.net"
 DEFAULT_REGION = "ru-central1"
 

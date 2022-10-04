@@ -1,6 +1,6 @@
 import configparser
-from os import path
 import pathlib
+from os import path
 
 ROOT_DIRECTORY = path.dirname(pathlib.Path(__file__).parent.parent)
 CONFIG_PATH_DIR = pathlib.Path.home() / ".config" / "cloudphoto"
@@ -43,4 +43,3 @@ def is_configured():
 def get_bucket_name() -> str:
     is_configured()
     return read_config().get("DEFAULT", "bucket")
-
