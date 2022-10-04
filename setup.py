@@ -21,6 +21,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Badmoon-mySun/cloudphoto",
     packages=setuptools.find_packages("src"),
+    include_package_data=True,
     package_dir={"": "src"},
     install_requires=all_reqs,
     classifiers=[
